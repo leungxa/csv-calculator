@@ -69,7 +69,6 @@ def evaluate(cell, doc, row=None, col=None):
     for token in equation:
         if is_cell_valid_name(token):
             ncol, nrow = get_cell(token)
-            # import pdb; pdb.set_trace()
             if ncol == col and nrow == row:
                 return error
             value = evaluate(doc[nrow][ncol], doc, row=nrow, col=ncol)
